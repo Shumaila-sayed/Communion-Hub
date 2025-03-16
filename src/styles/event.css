@@ -18,7 +18,7 @@ h2 {
     margin: 0.5em 4.5em 1em 4em;
 }
 
-.controls button {
+button {
     background-color: var(--tangerine);
     color: var(--latte);
     cursor: pointer;
