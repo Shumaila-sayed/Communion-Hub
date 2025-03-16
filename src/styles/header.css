@@ -1,0 +1,16 @@
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em 4.5em 0.5em 3.5em;
+    background-color: var(--Indigo);
+    color: var(--latte);
+}
+
+ul {
+    display: flex;
+    font-size: 1.4em;
+    gap: 1.5em;
+}
