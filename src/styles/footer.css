@@ -1,0 +1,8 @@
+footer {
+    background-color: var(--earth-yellow);
+    display: flex;
+    justify-content: space-between;
+    color: var(--latte);
+    padding: 1.5em 2em;
+    margin-top: 2.8em;
+}
