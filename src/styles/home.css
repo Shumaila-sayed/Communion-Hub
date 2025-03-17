@@ -1,0 +1,55 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    margin: 0.4em 0 4.5em 0;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.welcome-para {
+    text-align: center;
+    max-width: 40em;
+    margin-bottom: 1.5em;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    border-top: 2px solid var(--light-orange);
+    margin: 1.5em ;
+    padding: 4em;
+}
+
+.content-text h2 {
+    margin-top: -1em;
+    font-size: 2.2em;
+}
+
+.content-text button {
+    margin: 1.4em  0;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8em;
+
+}
+
+button img {
+    animation: bounce 1s infinite;;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

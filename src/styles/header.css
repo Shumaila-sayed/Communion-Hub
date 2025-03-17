@@ -1,5 +1,3 @@
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -13,4 +11,9 @@ ul {
     display: flex;
     font-size: 1.4em;
     gap: 1.5em;
+    cursor: pointer;
+}
+
+li:hover {
+   color: var(--light-orange);
 }
