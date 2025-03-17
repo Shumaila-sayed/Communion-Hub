@@ -147,6 +147,7 @@ const Event = () => {
 						<span
 							className='close-mark'
 							onClick={closeModal}
+							title='Close'
 						>
 							&times;
 						</span>

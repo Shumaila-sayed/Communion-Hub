@@ -14,6 +14,20 @@ ul {
     cursor: pointer;
 }
 
-li:hover {
+li:hover::after {
+   content: '─';
    color: var(--light-orange);
+   position: absolute;
+   top: 0.8em;
+   left: 0.5px;
+}
+
+li:hover {
+    color: var(--light-orange); 
+    transition: ease 0.5s;
+}
+
+li {
+    transition: ease 0.5s;
+    position: relative;
 }
