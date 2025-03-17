@@ -1,16 +1,16 @@
-import Event from "./Components/Event"
-import Footer from "./Components/Footer"
-import Header from "./Components/Header"
+import EventPage from "./Event-page"
+import Home from "./Home"
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
 
 const App = () => {
     return (
-        <>
-            <Header />
-            <Event />
-            <Footer />
-        </>
-        
-    )
+			<Router>
+				<Routes>
+                    <Route path="/" element={<Home />} />
+				    <Route path="/events" element={<EventPage />} />
+				</Routes>
+			</Router>
+		);
 }
 
 export default App
