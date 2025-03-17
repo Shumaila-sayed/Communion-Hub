@@ -28,6 +28,30 @@ const Event = () => {
 			description:
 				'An evening of fun, networking, and entertainment! Meet new people, enjoy live music, and participate in engaging activities designed to strengthen community bonds.',
 		},
+		{
+			title: 'Youth Leadership Summit',
+			date: '2025-05-05',
+			location: 'Houston',
+			category: 'Social',
+			description:
+				'The Youth Leadership Summit is a one-day event designed to inspire and empower young individuals to become future leaders. Empowering young leaders through inspiring talks and networking opportunities.',
+		},
+		{
+			title: 'Fundraiser for Local Schools',
+			date: '2025-06-12',
+			location: 'San Francisco',
+			category: 'Charity',
+			description:
+				'This event will include live music performances, silent auctions, and community-driven donation drives. Every contribution helps ensure a brighter future for children in need.',
+		},
+		{
+			title: 'Spiritual Retreat',
+			date: '2025-07-18',
+			location: 'Miami',
+			category: 'Religious',
+			description:
+				'Escape the stress of daily life and embark on a transformational spiritual journey at our weekend retreat. A peaceful retreat focusing on mindfulness, meditation, and spiritual growth.',
+		},
 	]);
 
 	const [newEvent, setNewEvent] = useState({
@@ -60,13 +84,13 @@ const Event = () => {
 
 	 const addEvent = (e) => {
 			e.preventDefault();
-			setEvents([...events, { id: events.length + 1, ...newEvent }]);
+			setEvents([...events, { ...newEvent }]);
 			closeModal();
 			setNewEvent({
 				title: '',
 				date: '',
 				location: '',
-				category: 'Religious',
+				category: 'All',
 				description: '',
 			});
 		};
@@ -97,18 +121,12 @@ const Event = () => {
 					</div>
 				</section>
 
-				<section>
+				<section className='all-events'>
 					{filteredEvent.map((event, index) => (
-						<div key={index + 1}>
+						<div key={index + 1} className='card'>
 							<h3>{event.title}</h3>
 							<p>
-								<strong>Date:</strong> {event.date}
-							</p>
-							<p>
-								<strong>Location:</strong> {event.location}
-							</p>
-							<p>
-								<strong>Category:</strong> {event.category}
+							{event.date} | {event.location}
 							</p>
 							<p>{event.description}</p>
 						</div>
@@ -117,7 +135,13 @@ const Event = () => {
 
 				<dialog ref={dialogRef}>
 					<form onSubmit={addEvent}>
-						<h3>Add a New Event</h3>
+						<span className='close-mark'
+							onClick={closeModal}
+						>
+							&times;
+						</span>
+                        <h4>Add a New Event</h4>
+                        <div className='form-fields'>
 						<input
 							type='text'
 							name='title'
@@ -155,17 +179,13 @@ const Event = () => {
 							placeholder='Event Description'
 							required
 							onChange={handleInputChange}
-							value={newEvent.description}
-						></textarea>
-						<div >
-							<button type='submit'>Add Event</button>
-							<button
-								type='button'
-								onClick={closeModal}
-							>
-								Close
-							</button>
+                            value={newEvent.description}
+                            rows='5'
+                         ></textarea>
+                            <button type='submit'>Add Event</button>
 						</div>
+							
+						
 					</form>
 				</dialog>
 			</>
