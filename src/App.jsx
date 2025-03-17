@@ -1,5 +1,5 @@
-import EventPage from "./Event-page"
-import Home from "./Home"
+import EventPage from "./pages/Event-page"
+import Home from "./pages/Home"
 import { HashRouter as Router, Routes, Route } from "react-router-dom"
 
 const App = () => {

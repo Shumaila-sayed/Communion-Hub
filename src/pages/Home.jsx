@@ -1,7 +1,7 @@
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import { Link } from "react-router-dom";
-import './styles/home.css'
+import '../styles/home.css'
 import CustomCarousel from "../Components/ImageSlider";
 import images from '../data/images';
 
