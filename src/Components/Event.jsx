@@ -99,8 +99,14 @@ const Event = () => {
 			<>
 				<section>
 					<div className='event-header'>
-						<h2>Discover & Join Events</h2>
-						<p>We Helped Communities Connect & Flourish</p>
+						<div>
+							<h2>Discover <em>&</em> Join Events</h2>
+							<p>We Helped Communities Connect & Flourish</p>
+						</div>
+						<img
+							src='./group-of-people.jpg'
+							alt=''
+						/>
 					</div>
 
 					<div className='controls'>
@@ -123,10 +129,13 @@ const Event = () => {
 
 				<section className='all-events'>
 					{filteredEvent.map((event, index) => (
-						<div key={index + 1} className='card'>
+						<div
+							key={index + 1}
+							className='card'
+						>
 							<h3>{event.title}</h3>
 							<p>
-							{event.date} | {event.location}
+								{event.date} | {event.location}
 							</p>
 							<p>{event.description}</p>
 						</div>
@@ -135,57 +144,56 @@ const Event = () => {
 
 				<dialog ref={dialogRef}>
 					<form onSubmit={addEvent}>
-						<span className='close-mark'
+						<span
+							className='close-mark'
 							onClick={closeModal}
 						>
 							&times;
 						</span>
-                        <h4>Add a New Event</h4>
-                        <div className='form-fields'>
-						<input
-							type='text'
-							name='title'
-							placeholder='Event Title'
-							required
-							onChange={handleInputChange}
-							value={newEvent.title}
-						/>
-						<input
-							type='date'
-							name='date'
-							required
-							onChange={handleInputChange}
-							value={newEvent.date}
-						/>
-						<input
-							type='text'
-							name='location'
-							placeholder='Location'
-							required
-							onChange={handleInputChange}
-							value={newEvent.location}
-						/>
-						<select
-							name='category'
-							onChange={handleInputChange}
-							value={newEvent.category}
-						>
-							<option value='Religious'>Religious</option>
-							<option value='Social'>Social</option>
-							<option value='Charity'>Charity</option>
-						</select>
-						<textarea
-							name='description'
-							placeholder='Event Description'
-							required
-							onChange={handleInputChange}
-                            value={newEvent.description}
-                            rows='5'
-                         ></textarea>
-                            <button type='submit'>Add Event</button>
+						<h4>Add a New Event</h4>
+						<div className='form-fields'>
+							<input
+								type='text'
+								name='title'
+								placeholder='Event Title'
+								required
+								onChange={handleInputChange}
+								value={newEvent.title}
+							/>
+							<input
+								type='date'
+								name='date'
+								required
+								onChange={handleInputChange}
+								value={newEvent.date}
+							/>
+							<input
+								type='text'
+								name='location'
+								placeholder='Location'
+								required
+								onChange={handleInputChange}
+								value={newEvent.location}
+							/>
+							<select
+								name='category'
+								onChange={handleInputChange}
+								value={newEvent.category}
+							>
+								<option value='Religious'>Religious</option>
+								<option value='Social'>Social</option>
+								<option value='Charity'>Charity</option>
+							</select>
+							<textarea
+								name='description'
+								placeholder='Event Description'
+								required
+								onChange={handleInputChange}
+								value={newEvent.description}
+								rows='5'
+							></textarea>
+							<button type='submit'>Add Event</button>
 						</div>
-							
-						
 					</form>
 				</dialog>
 			</>
